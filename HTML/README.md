@@ -22,8 +22,7 @@
 
 - 参考文章/项目：<br>
   - <a href="https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Html/Html">github Front-End-Interview-Notebook</a>
-  - <a href="https://juejin.cn/post/6905294475539513352">HTML高频面试题
-   </a>
+  - <a href="https://juejin.cn/post/6905294475539513352">HTML高频面试题</a>
   - <a href="https://juejin.cn/post/6844904180943945742">html面试知识点</a>
   - <a href="https://zhuanlan.zhihu.com/p/111953553">HTML5和HTML有什么区别？</a>
   - <a href="https://www.jianshu.com/p/800e6bb26590">html中的行内元素和块级元素有哪些</a>
