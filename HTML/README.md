@@ -5,10 +5,10 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [HTML](#html)
-    - [1. HTML, XHTML, XML, SGML区别](#1-html-xhtml-xml-sgml区别)
-    - [2. HTML5和HTML](#2-html5和html)
-    - [3. XHTM严格在哪里](#3-xhtm严格在哪里)
-    - [4. !DOCTYPE的作用](#4-doctype的作用)
+    - [HTML, XHTML, XML, SGML区别](#html-xhtml-xml-sgml区别)
+    - [HTML5和HTML](#html5和html)
+    - [XHTML严格在哪里](#xhtml严格在哪里)
+    - [!DOCTYPE的作用](#doctype的作用)
     - [行内元素和块级元素](#行内元素和块级元素)
     - [行内元素和块级元素转换方式](#行内元素和块级元素转换方式)
     - [空元素](#空元素)
@@ -20,15 +20,18 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
-本文知识点参考：https://github.com/CavsZhouyou/ Front-End-Interview-Notebook/blob/master/Html/Html<br>
-https://juejin.cn/post/6905294475539513352 <br>
-https://juejin.cn/post/6844904180943945742 \
-https://zhuanlan.zhihu.com/p/111953553\
-https://www.jianshu.com/p/800e6bb26590\
+- 参考文章/项目：<br>
+  - <a href="https://github.com/CavsZhouyou/Front-End-Interview-Notebook/blob/master/Html/Html">github Front-End-Interview-Notebook</a>
+  - <a href="https://juejin.cn/post/6905294475539513352">HTML高频面试题
+   </a>
+  - <a href="https://juejin.cn/post/6844904180943945742">html面试知识点</a>
+  - <a href="https://zhuanlan.zhihu.com/p/111953553">HTML5和HTML有什么区别？</a>
+  - <a href="https://www.jianshu.com/p/800e6bb26590">html中的行内元素和块级元素有哪些</a>
+  - <a href="https://www.cnblogs.com/wuqiutong/p/5986191.html">Doctype作用？严格模式与混杂模式如何区分？它们有何差异？</a>
 
-特此感谢，如有侵权，请联系我
+  **特此感谢，如有侵权，请联系我**
 
-### 1. HTML, XHTML, XML, SGML区别
+### HTML, XHTML, XML, SGML区别
 关系：
 ![](https://s2.loli.net/2022/01/03/vObXACFnK3pehLa.png)
 - HTML: Hyper Text Markup Language, 超文本标记语言，规范比较松散，用于规定怎么显示网页
@@ -36,7 +39,7 @@ https://www.jianshu.com/p/800e6bb26590\
 - XML: 可扩展的标记语言，主要用于存储数据和结构。
 - SGML：Standard Generalized Markup Language，标准通用标记语言,是一种定义电子文档结构和描述其内容的国际标准语言（源自百度百科）
 
-### 2. HTML5和HTML
+### HTML5和HTML
 HTML5是html的第5个版本
 主要新增的特性有以下几点：
 - 文档声明区别,
@@ -53,14 +56,14 @@ HTML5是html的第5个版本
 - HTML5支持使用canvas绘制图像
 - HTML5使用`<audio>`和`<video>`标签来支持音频和视频控制,无需任何额外的插件如Flash、Silverlight等，就可以传输所有内容.
 
-### 3. XHTM严格在哪里
+### XHTML严格在哪里
 - 标签名必须小写
 - 标签必须关闭
 - 必须正确嵌套
 - 必须要有根元素
 
 
-### 4. !DOCTYPE的作用
+### !DOCTYPE的作用
 ```
 doctype是一种标准通用标记语言的文档类型声明，目的是告诉标准通用标记语言解析器要使用什么样的文档类型定义（DTD）来解析文档。
 
