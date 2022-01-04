@@ -16,6 +16,9 @@
     - [严格模式和混杂模式](#严格模式和混杂模式)
     - [严格模式与混杂模式的语句解析不同点有哪些？](#严格模式与混杂模式的语句解析不同点有哪些)
     - [为什么会有这两种模式？](#为什么会有这两种模式)
+    - [src和href区别](#src和href区别)
+    - [script标签中defer和async的区别](#script标签中defer和async的区别)
+    - [常用的meta标签](#常用的meta标签)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -27,7 +30,8 @@
   - <a href="https://zhuanlan.zhihu.com/p/111953553">HTML5和HTML有什么区别？</a>
   - <a href="https://www.jianshu.com/p/800e6bb26590">html中的行内元素和块级元素有哪些</a>
   - <a href="https://www.cnblogs.com/wuqiutong/p/5986191.html">Doctype作用？严格模式与混杂模式如何区分？它们有何差异？</a>
-
+  - <a href="https://segmentfault.com/q/1010000000640869">defer和async的区别</a><br>
+  <br>
   **特此感谢，如有侵权，请联系我**
 
 ### HTML, XHTML, XML, SGML区别
@@ -50,7 +54,13 @@ HTML5是html的第5个版本
     - HTML 4.01 Transitional ：`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  "http://www.w3.org/TR/html4/loose.dtd">`
     - HTML 4.01 Frameset ：`<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"  "http://www.w3.org/TR/html4/frameset.dtd">`
 - HTML5新增许多语义化标签，例如：
-  - ``` <header><article><footer>```
+  - `<header></header>`  头部
+  - `<nav></nav> ` 导航栏
+  - `<section></section>`  区块（有语义化的div）
+  - `<main></main> ` 主要区域
+  - `<article></article> ` 主要内容
+  - `<aside></aside> ` 侧边栏
+  - `<footer></footer>`  底部
 
 - HTML5支持使用canvas绘制图像
 - HTML5使用`<audio>`和`<video>`标签来支持音频和视频控制,无需任何额外的插件如Flash、Silverlight等，就可以传输所有内容.
@@ -132,3 +142,66 @@ doctype在html中的作用就是触发浏览器的标准模式，如果html中�
 > 历史原因：Netscape4（网景公司早期的浏览器）和IE4（微软公司早期的浏览器）实现CSS机制时，并没有遵循W3C提出的标准。Netscape4 提供了糟糕的支持，而IE4 虽然接近标准，但依旧未能完全正确的支持标准。尽管IE 5 修复了IE4 许多的问题，但是依然延续CSS实现中的其它故障（主要是盒模型问题）。<br>
 > 为了保障自己的网站在各个浏览器上显示正确，网页开发者们不得不依据各个浏览器自身的规范来使用css，因此大部分网站的css实现并不符合W3C规范的标准。<br>
 > 而随着标准一致性越来越重要，浏览器开发商不得不面临一个艰难的抉择：逐渐遵循W3C的标准是前进的方向。但是改变现有的 css，完全去遵循标准，会使许多旧网站或多或少受到破坏，如果浏览器突然以正确的方式解析现存的css，陈旧的网站的显示必然会受到影响。所以，所有的浏览器都需要提供两种模式：混杂模式服务于旧式规则，而严格模式服务于标准规则。
+
+
+### src和href区别
+src和href都是用来引用外部的资源，区别如下
+- src特点
+  - 表示对资源的引用，指向的内容会嵌入到当前标签所在的位置。
+  - src会将其指向的资源下载并应⽤到⽂档内，如请求js脚本
+  - 当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执⾏完毕，所以⼀般js脚本会放在页面底部。
+- href
+    - 一般用于a,link等标签
+    - 它指向一些网络资源，建立和当前元素或本文档的链接关系。当浏览器识别到它他指向的⽂件时，就会**并⾏下载资源**，不会停⽌对当前⽂档的处理
+
+###  script标签中defer和async的区别
+![](https://s2.loli.net/2022/01/03/M5IZiLjbQThXWxt.png)
+![](https://s2.loli.net/2022/01/03/sau42Al9hOyMEJc.png)
+![](https://s2.loli.net/2022/01/03/CZ6U341Q8sdp7rJ.png)
+<a href="https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html">原图地址</a>
+
+### 常用的meta标签
+参考资料：<a href="https://www.cnblogs.com/xldxh/p/15362627.html">常用的meta标签</a>
+> `<meta>` 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+> <a href="https://blog.csdn.net/u011200604/article/details/51893323">HTML5基础与Meta http-equiv属性详解</a>
+
+meta标签可分为两大部分:http-equiv和name变量，主要使用场景有以下几种：
+- 声明文档使用的字符编码：` <meta charset="utf-8">`
+- 移动端适配：`<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0 minimal-ui"> `
+  - content包含以下属性
+    - width / height : 控制viewport的大小，可以指定一个值，如600， 或者特殊的值，如device-width为设备的宽度（单位是缩放为100%的CSS的像素）
+    - initial-scale : 初始缩放比例，页面第一次加载时的缩放比例
+    - maximum-scale : 允许用户缩放到的最大比例，范围从0到10.0
+    - minimum-scale : 允许用户缩放到的最小比例，范围从0到10.0
+    - user-scalable : 用户是否可以手动缩放，值可以是：①yes、 true允许用户缩放；②no、false不允许用户缩放
+    - minimal-ui:  iOS 7.1 的 Safari 中为 meta 标签新增 minimal-ui 属性,让网页在加载时便可隐藏顶部的地址栏与底部的导航栏
+
+- SEO优化
+    - keywords用来告诉搜索引擎你网页的关键字是什么。
+      - `<meta name="keywords" content="xxxx">`
+
+    - description用来告诉搜索引擎你的网站主要内容。
+      - `<meta name="description" content="xxx">`
+- 强制浏览器内核
+  - 强制Chromium内核，作用于360浏览器、QQ浏览器等国产双核浏览器
+    - `<meta name="render" content="webkit"/>`
+
+- 格式检测
+  - <meta name=”format-detection” content=”telephone=no,email=no,adress=no”>
+  - telephone，主要作用是是否设置自动将你的数字转化为拨号连接email，告诉设备不识别邮箱，点击之后不自动发送。adress，跳转至地图
+
+- http-equiv
+  - 设置expire:
+    `＜meta http-equiv="expires" content="Wed, 20 Jun 2007 22:33:00 GMT"＞  `
+  - Pragma(cache模式)
+    - `＜meta http-equiv="Pragma" content="no-cache"＞  `设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出 
+  - Refresh(刷新)   
+    - 自动刷新并指向新页面 `＜meta http-equiv="Refresh" content="2；URL=http://www.net.cn/"＞  `
+  - set-cookie: `＜meta http-equiv="Set-Cookie" content="cookievalue=xxx;expires=Wednesday, 20-Jun-2007 22:33:00 GMT； path=/"＞  `网页过期则cookie删除，时间必须为GMT格式
+  - content-Type(显示字符集的设定)：设定页面使用的字符集
+    - `＜meta http-equiv="content-Type" content="text/html; charset=gb2312"＞ `
+
+  - Page_Enter、Page_Exit :设定进入页面时的特殊效果
+    - `<meta http-equiv="Page-Enter"    contect="revealTrans(duration=1.0,transtion=    12)"> `
+    - Duration的值为网页动态过渡的时间，单位为秒。 
+    - Transition是过渡方式，它的值为0到23，分别对应24种过渡方式。 
