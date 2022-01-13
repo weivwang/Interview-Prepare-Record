@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="top" style="padding: 30px">
+      <div id="father">
+        <div id="child">123</div>
+        <div id="child2">123</div>
+        <div id="child3">123</div>
+        <div id="child4">123</div>
+        <div id="child5">123</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function click(e) {
+      console.log("child", e.target, e.currentTarget);
+    }
+    function fatherClick(e) {
+      console.log("father", e.target, e.currentTarget);
+    }
+    function topClick(e) {
+      console.log("top", e.target, e.currentTarget);
+    }
+    document.getElementById("child").addEventListener("click", click);
+    document.getElementById("father").addEventListener("click", fatherClick);
+    document.getElementById("top").addEventListener("click", topClick);
+  </script>
+</html>
