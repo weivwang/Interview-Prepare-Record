@@ -89,3 +89,24 @@ styled-component: 这里有一篇博文讲的很好，内容稍多，可以看�
 |static|默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。|
 |inherit|规定应该从父元素继承 position 属性的值。|
 |sticky|粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。它的行为就像 position:relative; 而当页面滚动超出目标区域时它的表现就像 position:fixed;，它会固定在目标位置。（可以用来做固定导航栏）
+
+### Flex布局
+flex是 flex-grow， flex-shrink， flex-basis的缩写<br>
+可参考 <a href = "https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">阮一峰博客</a>
+
+- 容器上的flex属性有：
+  - flex-direction: 决定主轴方向，按行排列还是按列排列
+  - flex-wrap: 如果一条轴线排列不下，会换行
+    - flex-wrap: nowrap | wrap | wrap-reverse(第一行在下方)
+  - flex-flow
+    - flex-direction | flex-wrap
+  - justify-content: 在主轴上的对其方式
+    - flex-start | flex-end | center | space-between | space-around;
+  - align-items: 在交叉轴上的对齐方式
+  - align-content：定义多根轴线的对齐方式
+
+- 项目上的flex
+  - order: 数值越小，排列越靠前，默认为0
+  - flex-grow: 项目的放大比例，默认为0，有剩余空间也不放大;flex-grow都为1时，会等分剩余空间
+  - flex-shrink: 默认为1，空间不足时会缩小。如果为1表示不会收缩。
+  - flex-basis：定义在分配多余属性之前，项目占据的主轴空间
