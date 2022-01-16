@@ -1,1 +1,4 @@
 # JavaScript
+
+### 缓存
+
