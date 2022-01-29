@@ -103,3 +103,13 @@ Gulp是基于流的自动化构建工具，除了可以管理和执行任务，�
 
 #### Rollup
 和Webpack类似但专注于ES6的模块打包工具。亮点在于对ES6源码进行Tree Shaking从而去除那些已经定义但是没有被使用过的代码。以及Scope Hoisting(作用域提升)来减小输出文件大小。但是这些亮点很快被webpack模仿并实现。
+
+
+### Vite
+新一代开发构建工具,利用浏览器的native ES module特性导入组织代码，使用rollup作为打包工具
+#### vite的优势，为了解决哪些问题
+- 缓慢的服务器启动：第一次在电脑上启动项目，基于打包器方式启动必须优先抓取并构建整个应用<br>
+  vite的解决方式：vite将应用中的模块分为依赖和源码，依赖大多不会变动（一般不会去改动node-modules文件夹里面的各种依赖）<br>
+  vite使用用go编写的<a href="https://esbuild.github.io/">esbuild</a>预先构建依赖，比使用js编写的打包器与构建依赖快10-100倍
+  源码通常是JSX, CSS, Vue, 一般在开发中经常变动
+
